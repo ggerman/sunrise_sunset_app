@@ -1,5 +1,10 @@
 # Ruby on Rails Development Environment with Docker
 
+## Complete Article:
+
+[Complete Article](https://rubystacknews.com/2025/03/12/streamline-your-ruby-on-rails-development-with-docker/)
+
+
 This repository provides a complete Ruby on Rails development environment using Docker. It includes everything needed to start a Rails project: a PostgreSQL database, MailCatcher for email testing, and all necessary dependencies pre-configured.
 
 ## Table of Contents
@@ -23,7 +28,7 @@ Before using this environment, ensure you have the following installed on your m
 If you haven't already cloned this repository, do so using:
 
 ```bash
-git clone https://github.com/your-username/repository-name.git
+git clone git@github.com:ggerman/ruby_on_rails_dockerized.git
 cd repository-name
 ```
 
