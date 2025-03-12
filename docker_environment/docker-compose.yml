@@ -1,0 +1,40 @@
+services:
+  db:
+    container_name: env-ruby_stack_news.db
+    image: postgres:14.1
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 5432:5432
+    volumes:
+      - ${PWD}/docker_environment/init-database:/docker-entrypoint-initdb.d/
+      - db_store:/var/lib/postgresql/data
+  mailcatcher:
+    container_name: env-ruby_stack_news.mailcatcher
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+  rails:
+    build:
+      context: ..
+      dockerfile: docker_environment/Dockerfile
+    container_name: env-ruby_stack_news.rails
+    depends_on:
+      - db
+      - mailcatcher
+    environment:
+      - BASE_URL=http://localhost:3000
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - RAILS_ENV=development
+    ports:
+      - 3000:3000
+    tty: true
+    volumes:
+      - ${PWD}:/app
+      - ${PWD}/.root:/root
+    # Comment platform out if not on M1?
+    platform: linux/amd64
+volumes:
+  db_store:
