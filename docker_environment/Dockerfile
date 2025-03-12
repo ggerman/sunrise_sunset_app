@@ -1,6 +1,6 @@
 FROM ruby:alpine
 
-RUN apk update && apk upgrade && apk add --update bash build-base libxml2-dev libxslt-dev postgresql-client postgresql-dev npm yarn tzdata shared-mime-info git
+RUN apk update && apk upgrade && apk add --update bash build-base libxml2-dev libxslt-dev postgresql-client postgresql-dev npm yarn tzdata shared-mime-info git rsync
 RUN apk add imagemagick imagemagick-dev imagemagick-libs
 RUN apk add curl yaml-dev
 

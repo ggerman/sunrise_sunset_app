@@ -9,7 +9,7 @@ services:
       - 5432:5432
     volumes:
       - ${PWD}/docker_environment/init-database:/docker-entrypoint-initdb.d/
-      - db_store:/var/lib/postgresql/data
+      - store:/var/lib/postgresql/data
   mailcatcher:
     container_name: env-ruby_stack_news.mailcatcher
     image: schickling/mailcatcher
@@ -34,7 +34,6 @@ services:
     volumes:
       - ${PWD}:/app
       - ${PWD}/.root:/root
-    # Comment platform out if not on M1?
     platform: linux/amd64
 volumes:
-  db_store:
+  store:
