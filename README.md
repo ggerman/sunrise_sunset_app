@@ -1,2 +1,2 @@
-# ruby_on_rails_dockerized
+# Ruby on Rails Dockerized
 Start your Ruby on Rails project by simply running a single command.
