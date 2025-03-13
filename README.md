@@ -49,6 +49,16 @@ Run the following command to start the Rails application:
 #### Subsequent Runs
 On subsequent runs, the script simply starts the existing containers, allowing you to continue developing your Rails application.
 
+> **Note:**  
+> If Docker creates files with root permissions, you may need to change ownership to your user.  
+> Run the following command:  
+>  
+> ```sh
+> sudo chown your_user:your_user -Rv *
+> ```  
+>  
+> This will recursively update ownership, allowing you to read, write, and execute the files.
+
 ## Available Commands
 ### 1. Start the Application
 Starts the Rails application and all associated services (PostgreSQL, MailCatcher):
