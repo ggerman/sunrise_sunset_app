@@ -1,3 +1,4 @@
+.env
 .root
 .root/*
 frontend/.root
