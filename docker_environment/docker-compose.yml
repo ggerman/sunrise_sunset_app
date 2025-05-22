@@ -46,6 +46,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
       - RAILS_ENV=development
+      - OPENCAGE_API_KEY=${OPENCAGE_API_KEY}
     ports:
       - 5000:5000
     tty: true
