@@ -1,0 +1,17 @@
+FROM ruby:alpine
+
+RUN apk update && apk upgrade && apk add --update bash build-base libxml2-dev libxslt-dev postgresql-client postgresql-dev npm yarn tzdata shared-mime-info git rsync
+RUN apk add imagemagick imagemagick-dev imagemagick-libs
+RUN apk add curl yaml-dev
+
+WORKDIR /backend
+
+RUN gem install nokogiri
+RUN gem install rails
+
+COPY . .
+
+RUN yarn install --modules-folder /node_modules
+ENV PATH /usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/node_modules/.bin
+
+CMD [ "bin/start_project.sh" ]

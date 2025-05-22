@@ -1,0 +1,18 @@
+{
+  "welcome": "Bienvenido a React",
+  "home": "Inicio",
+  "about": "Acerca de ShipCheap",
+  "vehicles": "Vehiculos",
+  "contact": "Conctactanos",
+  "hello": "¡Hola, {{name}}!",
+  "official_dollar": "Dólar oficial",
+  "price": "Precio",
+  "higher_price": "Precio de Venta",
+  "lower_price": "Precio de Compra",
+  "blue_dollar": "Dólar Blue",
+  "ask": "Precio de Venta",
+  "bid": "Precio de Compra",
+  "variations": "Variaciones",
+  "timestamp": "timestamp"
+}
+

@@ -32,12 +32,12 @@ project_dir="."
 if [ -f "$project_dir/Gemfile.lock" ] && grep -q "rails" "$project_dir/Gemfile.lock"; then
     run_ruby_on_rails
 else
-    rails new ruby_stack_news --database=postgresql --css tailwind
+    rails new sunrise_sunset_app --database=postgresql --css tailwind
     rsync -a --ignore-existing ruby_stack_news/* .
     rm -rvf ruby_stack_news
     bundle add foreman
-    echo "web: bin/rails server -p 3000 -b 0.0.0.0" > /app/Procfile.dev
-    cp /app/tmp/database.yml /app/config/
+    echo "web: bin/rails server -p 3000 -b 0.0.0.0" > /background/Procfile.dev
+    cp /background/tmp/database.yml /background/config/
     bundle install
     run_ruby_on_rails
 fi

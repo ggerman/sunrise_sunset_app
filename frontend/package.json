@@ -1,0 +1,48 @@
+{
+  "name": "frontend_sunrise_sunset_app",
+  "version": "1.0.0",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/system": "^7.1.0",
+    "@mui/x-data-grid": "^8.2.0",
+    "i18next": "^20.3.5",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "i18next-xhr-backend": "^3.2.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "^11.15.3",
+    "react-scripts": "^3.0.1",
+    "styled-components": "^6.1.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "dev": "react-scripts start"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "typescript": "^3.9.10"
+  },
+  "description": "",
+  "main": "babel.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

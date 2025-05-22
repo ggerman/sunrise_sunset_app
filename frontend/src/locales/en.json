@@ -1,0 +1,17 @@
+{
+  "welcome": "Welcome to React",
+  "home": "Home",
+  "about": "About",
+  "vehicles": "Vehicles",
+  "contact": "Contact",
+  "hello": "Hello, {{name}}!",
+  "official_dollar": "oficial",
+  "price": "Price",
+  "higher_price": "Higher Price",
+  "lower_price": "Lower Price",
+  "blue_dollar": "Blue",
+  "ask": "Ask",
+  "bid": "Bid",
+  "variations": "Variations",
+  "timestamp": "Timestamp"
+}

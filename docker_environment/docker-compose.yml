@@ -1,6 +1,6 @@
 services:
   db:
-    container_name: env-ruby_stack_news.db
+    container_name: jumpseller.db
     image: postgres:14.1
     environment:
       - POSTGRES_USER=postgres
@@ -10,16 +10,34 @@ services:
     volumes:
       - ${PWD}/docker_environment/init-database:/docker-entrypoint-initdb.d/
       - store:/var/lib/postgresql/data
+
   mailcatcher:
-    container_name: env-ruby_stack_news.mailcatcher
+    container_name: jumpseller.mailcatcher
     image: schickling/mailcatcher
     ports:
       - "1080:1080"
+
+  react-app:
+    build:
+        context: ..
+        dockerfile: docker_environment/Dockerfile.react
+    container_name: jumpseller.react
+    ports:
+      - 3000:3000
+    volumes:
+      - ${PWD}/frontend:/frontend
+      - ${PWD}/frontend/.root:/root
+    environment:
+      - NODE_ENV=development
+      - NODE_OPTIONS=--openssl-legacy-provider
+    stdin_open: true
+    tty: true
+
   rails:
     build:
       context: ..
-      dockerfile: docker_environment/Dockerfile
-    container_name: env-ruby_stack_news.rails
+      dockerfile: docker_environment/Dockerfile.rails
+    container_name: jumpseller.rails
     depends_on:
       - db
       - mailcatcher
@@ -29,10 +47,10 @@ services:
       - POSTGRES_PASSWORD=password
       - RAILS_ENV=development
     ports:
-      - 3000:3000
+      - 5000:5000
     tty: true
     volumes:
-      - ${PWD}:/app
+      - ${PWD}/backend:/backend
       - ${PWD}/.root:/root
     platform: linux/amd64
 volumes:
