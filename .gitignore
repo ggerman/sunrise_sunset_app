@@ -4,3 +4,4 @@ frontend/.root
 frontend/.root/*
 tmp
 tmp/*
+.env
