@@ -1,7 +1,9 @@
 # spec/models/location_spec.rb
+#
 require "spec_helper"
 
 RSpec.describe Location, type: :model do
+
   describe ".find_or_create_with_coordinates" do
     it "creates a location with valid geocoding" do
       location = Location.find_or_create_with_coordinates(location_name: "Barcelona", country: "Spain")
@@ -17,5 +19,6 @@ RSpec.describe Location, type: :model do
       expect(locations.size).to be >= 1
     end
   end
+
 end
 
