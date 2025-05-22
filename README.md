@@ -13,3 +13,7 @@ http://localhost:5000/
 http://localhost:3000/
 
 ![](./resources/frontend.png)
+
+## .env 
+
+**Note:** To run this application, you'll need a `.env` file with several environment variables.

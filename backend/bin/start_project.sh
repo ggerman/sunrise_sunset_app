@@ -11,7 +11,7 @@ run_ruby_on_rails() {
 
     cd /backend
     rm -f tmp/pids/server.pid
-    bundle install
+    # bundle install
 
     bundle exec rake db:create RAILS_ENV=$RAILS_ENV
     bundle exec rake db:migrate RAILS_ENV=$RAILS_ENV
