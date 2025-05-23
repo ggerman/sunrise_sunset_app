@@ -6,7 +6,7 @@ info:
 paths:
   "/api/sunlight/show":
     get:
-      summary: Returns sunrise and sunset for a given location and date
+      summary: show sunlight
       tags:
       - Sunlight
       parameters:
@@ -16,7 +16,14 @@ paths:
         description: City or place name
         schema:
           type: string
-      - name: date
+      - name: start_date
+        in: query
+        format: date
+        required: false
+        description: Date in YYYY-MM-DD format (defaults to today)
+        schema:
+          type: string
+      - name: end_date
         in: query
         format: date
         required: false
@@ -25,10 +32,8 @@ paths:
           type: string
       responses:
         '200':
-          description: sunlight data found
+          description: successful
         '400':
-          description: missing location
-        '500':
           description: internal error
 servers:
 - url: http://{defaultHost}

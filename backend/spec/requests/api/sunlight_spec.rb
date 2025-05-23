@@ -12,11 +12,13 @@ RSpec.describe 'api/sunlight', type: :request do
       tags "Sunlight"
       produces "application/json"
       parameter name: :location, in: :query, type: :string, required: true, description: "City or place name"
-      parameter name: :date, in: :query, type: :string, format: :date, required: false, description: "Date in YYYY-MM-DD format (defaults to today)"
+      parameter name: :start_date, in: :query, type: :string, format: :date, required: false, description: "Date in YYYY-MM-DD format (defaults to today)"
+      parameter name: :end_date, in: :query, type: :string, format: :date, required: false, description: "Date in YYYY-MM-DD format (defaults to today)"
 
       response(200, 'successful') do
         let(:location) { "Lisbon" }
-        let(:date) { "2025-06-01" }
+        let(:start_date) { "2025-01-01" }
+        let(:end_date) { "2025-06-01" }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -30,6 +32,8 @@ RSpec.describe 'api/sunlight', type: :request do
 
       response "400", "missing location" do
         let(:location) { nil }
+        let(:start_date) { "2025-01-01" }
+        let(:end_date) { "2025-06-01" }
 
         it "returns a 400 response" do |example|
           submit_request(example.metadata)
