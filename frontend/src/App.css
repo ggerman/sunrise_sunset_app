@@ -1,0 +1,211 @@
+/* === Estilos generales === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Metropolis', sans-serif;
+  background-color: #f9fafb; /* fondo claro */
+  color: #111827;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* === Header / Logo / Navegación === */
+.App > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  height: 40px;
+}
+
+.menu-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.menu-list li a {
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.menu-list li a:hover {
+  color: #3b82f6;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.menu-buttons button {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.menu-buttons button:hover {
+  background-color: #e5e7eb;
+}
+
+/* === Main Container === */
+.min-h-screen {
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.max-w-md {
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.ring-1 {
+  box-shadow: 0 0 0 1px rgba(209, 213, 219, 1);
+}
+
+/* === Formulario === */
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+/* === Footer === */
+footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #f3f4f6;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+
+.sunlight-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-family: 'Metropolis', sans-serif;
+}
+
+.sunlight-table th,
+.sunlight-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 0.875rem;
+  color: #111827;
+}
+
+.sunlight-table thead {
+  background-color: #f3f4f6; /* gris muy claro */
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sunlight-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.sunlight-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.sunlight-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.sunlight-table caption {
+  caption-side: bottom;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: right;
+}

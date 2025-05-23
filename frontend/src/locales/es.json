@@ -13,6 +13,12 @@
   "ask": "Precio de Venta",
   "bid": "Precio de Compra",
   "variations": "Variaciones",
-  "timestamp": "timestamp"
+  "timestamp": "timestamp",
+  "search_data": "Buscar",
+  "location": "Localidad",
+  "date": "Día",
+  "sunrise": "Amanecer",
+  "golden_hour": "Hora Dorada",
+  "sunset": "Puesta de Sol"
 }
 

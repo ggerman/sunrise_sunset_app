@@ -1,0 +1,42 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/sunlight/show":
+    get:
+      summary: show sunlight
+      tags:
+      - Sunlight
+      parameters:
+      - name: location
+        in: query
+        required: true
+        description: City or place name
+        schema:
+          type: string
+      - name: start_date
+        in: query
+        format: date
+        required: false
+        description: Date in YYYY-MM-DD format (defaults to today)
+        schema:
+          type: string
+      - name: end_date
+        in: query
+        format: date
+        required: false
+        description: Date in YYYY-MM-DD format (defaults to today)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+        '400':
+          description: internal error
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:5000

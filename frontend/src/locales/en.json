@@ -13,5 +13,10 @@
   "ask": "Ask",
   "bid": "Bid",
   "variations": "Variations",
-  "timestamp": "Timestamp"
+  "timestamp": "Timestamp",
+  "location": "Location",
+  "date": "Date",
+  "sunrise": "Sunrise",
+  "golden_hour": "Golden Hour",
+  "sunset": "Sunset"
 }
