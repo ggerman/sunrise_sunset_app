@@ -43,18 +43,21 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
+
 const LocationDateForm = () => {
 
   const [location, setLocation] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [result, setResult] = useState(null);
+  const [hasSearched, setHasSearched] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setLoading(true);
+    setHasSearched(true);
     setResult(null);
 
     const apiUrl = `http://localhost:5000/api/sunlight/show?location=${encodeURIComponent(location)}&start_date=${startDate}&end_date=${endDate}`;
@@ -167,7 +170,7 @@ const LocationDateForm = () => {
       )}
 
         {/* Gráfico Recharts */}
-        {result && result.length > 0 && (
+        {result && result.length > 0 ? (
           <div style={{ height: 300 }}>
             <h3 className="text-xl font-semibold mb-4 text-gray-800">Sunlight Chart</h3>
             <ResponsiveContainer width="100%" height="100%">
@@ -221,6 +224,17 @@ const LocationDateForm = () => {
                 />
               </LineChart>
             </ResponsiveContainer>
+          </div>
+        ):(
+          <div>
+          {hasSearched && (
+              <div className="flex items-center justify-center min-h-[200px] w-full">
+                <div className="bg-blue-50 border-l-4 border-blue-500 text-blue-700 p-6 rounded-md shadow-sm max-w-md w-full text-center">
+                  <h4 className="font-semibold text-lg">No Data Available</h4>
+                  <p className="italic mt-2">There is no data to display.</p>
+                </div>
+              </div>
+          )}
           </div>
         )}
 
