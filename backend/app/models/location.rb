@@ -38,6 +38,8 @@ class Location < ApplicationRecord
     return Location.where(:location_name => location_name) if Location.where(:location_name => location_name).present?
 
     results = Geocoder.search(location_name)
+    raise ActionController::BadRequest, "Location not found" if results.empty?
+
     saved_locations = []
 
     results.each do |geo|
