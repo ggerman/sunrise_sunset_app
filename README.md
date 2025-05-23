@@ -17,3 +17,9 @@ http://localhost:3000/
 ## .env 
 
 **Note:** To run this application, you'll need a `.env` file with several environment variables.
+
+# API Documentation
+
+http://localhost:5000/api-docs/index.html
+
+![](./resources/Swagger_UI.png)
