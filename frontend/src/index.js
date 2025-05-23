@@ -11,17 +11,11 @@ import Footer from './layout/Footer'
 
 
 export default function App() {
-    const {t, i18n} = useTranslation();
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
-    
     return ( 
         <div className="App">
             <Header />
              <div className="min-h-screen bg-gray-50 p-8">
-                <h1 className="text-2xl font-bold mb-6">{t(search_data)}</h1>
                 <LocationDateForm />
             </div>
             <Footer />

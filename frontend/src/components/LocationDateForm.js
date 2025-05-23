@@ -45,12 +45,6 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 const LocationDateForm = () => {
 
-  const {t, i18n} = useTranslation();
-
-  const changeLanguage = (lng) => {
-      i18n.changeLanguage(lng);
-  };
-
   const [location, setLocation] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -142,11 +136,11 @@ const LocationDateForm = () => {
           <table className="sunlight-table min-w-full bg-white border border-gray-200 rounded-md overflow-hidden">
             <thead className="bg-gray-100 text-gray-700 text-sm uppercase">
               <tr>
-                <th className="py-3 px-4 text-left">{t(location)}</th>
-                <th className="py-3 px-4 text-left">{t(date)}</th>
-                <th className="py-3 px-4 text-left">{t(sunrise)}</th>
-                <th className="py-3 px-4 text-left">{t(golden_hour)}</th>
-                <th className="py-3 px-4 text-left">{t(sunset)}</th>
+                <th className="py-3 px-4 text-left">Location</th>
+                <th className="py-3 px-4 text-left">Date</th>
+                <th className="py-3 px-4 text-left">Sunrise</th>
+                <th className="py-3 px-4 text-left">Golden Hour</th>
+                <th className="py-3 px-4 text-left">Sunset</th>
               </tr>
             </thead>
             <tbody className="text-gray-800">
