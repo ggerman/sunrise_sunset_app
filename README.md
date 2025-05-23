@@ -4,7 +4,9 @@
 
 ## Run application
 ```bash
-./bin/start.sh up
+# git clone https://github.com/ggerman/sunrise_sunset_app.git
+# cd sunrise_sunset_app
+# ./bin/start.sh up
 ```
 http://localhost:5000/
 
