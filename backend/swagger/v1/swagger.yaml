@@ -1,0 +1,37 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/sunlight/show":
+    get:
+      summary: Returns sunrise and sunset for a given location and date
+      tags:
+      - Sunlight
+      parameters:
+      - name: location
+        in: query
+        required: true
+        description: City or place name
+        schema:
+          type: string
+      - name: date
+        in: query
+        format: date
+        required: false
+        description: Date in YYYY-MM-DD format (defaults to today)
+        schema:
+          type: string
+      responses:
+        '200':
+          description: sunlight data found
+        '400':
+          description: missing location
+        '500':
+          description: internal error
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:5000
