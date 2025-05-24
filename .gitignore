@@ -6,3 +6,5 @@ frontend/.root/*
 tmp
 tmp/*
 .env
+frontend/node_modules/.cache
+frontend/node_modules/.cache/*
